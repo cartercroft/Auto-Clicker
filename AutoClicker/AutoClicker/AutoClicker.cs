@@ -25,7 +25,10 @@ namespace AutoClicker
         private int maxClickBeforeMouseMoveDefault = 30;
         private int mousePixelsToMoveFromCenter = 3;
 
+        private const Keys stopKey = Keys.F4;
+        private const Keys startKey = Keys.F1;
         private int mouseClicksThisRun = 0;
+        private KeyboardHook keyboardHook;
 
         private static object threadLocker = new object();
 
@@ -34,6 +37,9 @@ namespace AutoClicker
         public AutoClicker()
         { 
             InitializeComponent();
+            keyboardHook = new KeyboardHook(HandleKeyDown);
+            startButton.Text = $"Start ({startKey})";
+            stopButton.Text = $"Stop ({stopKey})";
             InitializeWaitTimes(minTimeDefault, maxTimeDefault, minClickBeforeMouseMoveDefault, maxClickBeforeMouseMoveDefault);
 
             //Mouse coordinate label thread
@@ -316,6 +322,21 @@ namespace AutoClicker
             this.mouseClicksThisRun = 0;
             SetMouseClickLabel(mouseClicksThisRun);
             EnableSettingFields();
+        }
+
+        private void HandleKeyDown(Keys key)
+        {
+            switch (key)
+            {
+                case stopKey:
+                    StopButton_Click(null, null);
+                    break;
+                case startKey:
+                    StartButton_Click(null, null);
+                    break;
+                default:
+                    break;
+            }
         }
 
         #region Enable/Disable Setting Fields
