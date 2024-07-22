@@ -19,8 +19,9 @@ namespace AutoClicker
         private int centerMouseY;
 
         private bool run = false;
-        private int minTimeDefault = 1600;
-        private int maxTimeDefault = 2600;
+        private int minTimeDefault = 1000;
+        private int maxTimeDefault = 1250;
+        private int pauseBetweenBurstDefault = 0;
         private int minClickBeforeMouseMoveDefault = 1;
         private int maxClickBeforeMouseMoveDefault = 30;
         private int mousePixelsToMoveFromCenter = 3;
@@ -50,7 +51,7 @@ namespace AutoClicker
 
         private void ContinuallyUpdateMouseCoordLabel (int precisionMilliseconds = 60)
         {
-            while (true)
+            while (this.run)
             {
                 System.Threading.Thread.Sleep(precisionMilliseconds); //Update every 60 milliseconds
 
@@ -82,6 +83,7 @@ namespace AutoClicker
         {
             this.minWait.Text = minTimeDefault + "";
             this.maxWait.Text = maxTimeDefault + "";
+            this.txtPauseBetweenBurst.Text = pauseBetweenBurstDefault + "";
             this.minClicksBetweenMovement.Text = minClickBeforeMouseMoveDefault + "";
             this.maxClicksBetweenMovement.Text = maxClickBeforeMouseMoveDefault + "";
         }
@@ -182,6 +184,7 @@ namespace AutoClicker
 
             int minWaitTime = int.Parse(minWait.Text.ToString());
             int maxWaitTime = int.Parse(maxWait.Text.ToString());
+            int pauseBetweenBurstTime = int.Parse(txtPauseBetweenBurst.Text.ToString());
 
             int minClicks = int.Parse(minClicksBetweenMovement.Text.ToString());
             int maxClicks = int.Parse(maxClicksBetweenMovement.Text.ToString());
@@ -209,8 +212,10 @@ namespace AutoClicker
                 //Also need an auto clicking thing.
                 MethodInvoker mouseCoordUpdateInvoker = new MethodInvoker(RandomlyUpdateMouseCoordinates);
                 this.Invoke(mouseCoordUpdateInvoker);
-
-                Thread.Sleep(1000);
+                if(pauseBetweenBurstTime > 0)
+                {
+                    Thread.Sleep(pauseBetweenBurstTime);
+                }
             }
         }
 
@@ -353,6 +358,7 @@ namespace AutoClicker
             this.startButton.Enabled = true;
             this.maxClicksBetweenMovement.Enabled = true;
             this.minClicksBetweenMovement.Enabled = true;
+            this.txtPauseBetweenBurst.Enabled = true;
             this.minWait.Enabled = true;
             this.maxWait.Enabled = true;
         }
@@ -369,10 +375,10 @@ namespace AutoClicker
             this.startButton.Enabled = false;
             this.maxClicksBetweenMovement.Enabled = false;
             this.minClicksBetweenMovement.Enabled = false;
+            this.txtPauseBetweenBurst.Enabled = false;
             this.minWait.Enabled = false;
             this.maxWait.Enabled = false;
         }
         #endregion
-
     }
 }

@@ -41,14 +41,16 @@
             this.MouseXLabel = new System.Windows.Forms.Label();
             this.MouseYLabel = new System.Windows.Forms.Label();
             this.numMouseClicks = new System.Windows.Forms.Label();
+            this.label4 = new System.Windows.Forms.Label();
+            this.txtPauseBetweenBurst = new System.Windows.Forms.TextBox();
             this.SuspendLayout();
             // 
             // startButton
             // 
-            this.startButton.Location = new System.Drawing.Point(136, 191);
+            this.startButton.Location = new System.Drawing.Point(17, 262);
             this.startButton.Margin = new System.Windows.Forms.Padding(4);
             this.startButton.Name = "startButton";
-            this.startButton.Size = new System.Drawing.Size(100, 28);
+            this.startButton.Size = new System.Drawing.Size(238, 28);
             this.startButton.TabIndex = 0;
             this.startButton.Text = "Start";
             this.startButton.UseVisualStyleBackColor = true;
@@ -56,10 +58,10 @@
             // 
             // stopButton
             // 
-            this.stopButton.Location = new System.Drawing.Point(136, 226);
+            this.stopButton.Location = new System.Drawing.Point(263, 262);
             this.stopButton.Margin = new System.Windows.Forms.Padding(4);
             this.stopButton.Name = "stopButton";
-            this.stopButton.Size = new System.Drawing.Size(100, 28);
+            this.stopButton.Size = new System.Drawing.Size(238, 28);
             this.stopButton.TabIndex = 1;
             this.stopButton.Text = "Stop";
             this.stopButton.UseVisualStyleBackColor = true;
@@ -167,11 +169,31 @@
             this.numMouseClicks.TabIndex = 12;
             this.numMouseClicks.Text = "0 Total Mouse Clicks";
             // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Location = new System.Drawing.Point(17, 144);
+            this.label4.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(163, 16);
+            this.label4.TabIndex = 14;
+            this.label4.Text = "Pause Between Burst (ms)";
+            // 
+            // txtPauseBetweenBurst
+            // 
+            this.txtPauseBetweenBurst.Location = new System.Drawing.Point(217, 136);
+            this.txtPauseBetweenBurst.Margin = new System.Windows.Forms.Padding(4);
+            this.txtPauseBetweenBurst.Name = "txtPauseBetweenBurst";
+            this.txtPauseBetweenBurst.Size = new System.Drawing.Size(132, 22);
+            this.txtPauseBetweenBurst.TabIndex = 13;
+            // 
             // AutoClicker
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(539, 321);
+            this.Controls.Add(this.label4);
+            this.Controls.Add(this.txtPauseBetweenBurst);
             this.Controls.Add(this.numMouseClicks);
             this.Controls.Add(this.MouseYLabel);
             this.Controls.Add(this.MouseXLabel);
@@ -208,6 +230,8 @@
         private System.Windows.Forms.Label MouseXLabel;
         private System.Windows.Forms.Label MouseYLabel;
         private System.Windows.Forms.Label numMouseClicks;
+        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.TextBox txtPauseBetweenBurst;
     }
 }
 
