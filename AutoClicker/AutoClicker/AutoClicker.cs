@@ -90,6 +90,8 @@ namespace AutoClicker
             this.txtPauseBetweenBurst.Text = pauseBetweenBurstDefault + "";
             this.minClicksBetweenMovement.Text = minClickBeforeMouseMoveDefault + "";
             this.maxClicksBetweenMovement.Text = maxClickBeforeMouseMoveDefault + "";
+            this.txtMinSleepTime.Text = _minSleepTime.ToString();
+            this.txtMaxSleepTime.Text = _maxSleepTime.ToString();
         }
 
         private void StartButton_Click(object sender, EventArgs e)
