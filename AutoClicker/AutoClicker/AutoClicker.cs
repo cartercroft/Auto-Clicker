@@ -25,6 +25,8 @@ namespace AutoClicker
         private int minClickBeforeMouseMoveDefault = 1;
         private int maxClickBeforeMouseMoveDefault = 30;
         private int mousePixelsToMoveFromCenter = 3;
+        private int _minSleepTime = 0;
+        private int _maxSleepTime = 0;
 
         private const Keys stopKey = Keys.F4;
         private const Keys startKey = Keys.F1;
@@ -41,6 +43,8 @@ namespace AutoClicker
             keyboardHook = new KeyboardHook(HandleKeyDown);
             startButton.Text = $"Start ({startKey})";
             stopButton.Text = $"Stop ({stopKey})";
+            _minSleepTime = 0;
+            _maxSleepTime = 200;
             InitializeWaitTimes(minTimeDefault, maxTimeDefault, minClickBeforeMouseMoveDefault, maxClickBeforeMouseMoveDefault);
 
             //Mouse coordinate label thread
@@ -150,6 +154,8 @@ namespace AutoClicker
                 maxClicks = int.Parse(this.maxClicksBetweenMovement.Text.ToString());
                 minWait = int.Parse(this.minWait.Text.ToString());
                 maxWait = int.Parse(this.maxWait.Text.ToString());
+                int.Parse(this.txtMaxSleepTime.Text);
+                int.Parse(this.txtMinSleepTime.Text);
             }
             catch (Exception)
             {
@@ -188,6 +194,9 @@ namespace AutoClicker
 
             int minClicks = int.Parse(minClicksBetweenMovement.Text.ToString());
             int maxClicks = int.Parse(maxClicksBetweenMovement.Text.ToString());
+
+            _minSleepTime = int.Parse(txtMinSleepTime.Text);
+            _maxSleepTime = int.Parse(txtMaxSleepTime.Text);
 
             while (this.run)
             {
@@ -237,7 +246,7 @@ namespace AutoClicker
 
                 Win32.POINT p = new Win32.POINT();
 
-                int sleepTime = rnd.Next(1000, 4500); //Sleep between 1 and 4.5 seconds..?
+                int sleepTime = rnd.Next(_minSleepTime, _maxSleepTime); //Sleep between 1 and 4.5 seconds..?
 
                 Win32.ClientToScreen(this.Handle, ref p);
                 Win32.SetCursorPos(randX, randY);
@@ -361,6 +370,8 @@ namespace AutoClicker
             this.txtPauseBetweenBurst.Enabled = true;
             this.minWait.Enabled = true;
             this.maxWait.Enabled = true;
+            this.txtMinSleepTime.Enabled = true;
+            this.txtMaxSleepTime.Enabled = true;
         }
 
         /// <summary>
@@ -378,6 +389,8 @@ namespace AutoClicker
             this.txtPauseBetweenBurst.Enabled = false;
             this.minWait.Enabled = false;
             this.maxWait.Enabled = false;
+            this.txtMinSleepTime.Enabled = false;
+            this.txtMaxSleepTime.Enabled = false;
         }
         #endregion
     }

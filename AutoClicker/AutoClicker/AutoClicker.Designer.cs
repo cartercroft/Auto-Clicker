@@ -43,14 +43,17 @@
             this.numMouseClicks = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.txtPauseBetweenBurst = new System.Windows.Forms.TextBox();
+            this.label5 = new System.Windows.Forms.Label();
+            this.txtMinSleepTime = new System.Windows.Forms.TextBox();
+            this.label6 = new System.Windows.Forms.Label();
+            this.txtMaxSleepTime = new System.Windows.Forms.TextBox();
             this.SuspendLayout();
             // 
             // startButton
             // 
-            this.startButton.Location = new System.Drawing.Point(17, 262);
-            this.startButton.Margin = new System.Windows.Forms.Padding(4);
+            this.startButton.Location = new System.Drawing.Point(13, 213);
             this.startButton.Name = "startButton";
-            this.startButton.Size = new System.Drawing.Size(238, 28);
+            this.startButton.Size = new System.Drawing.Size(178, 23);
             this.startButton.TabIndex = 0;
             this.startButton.Text = "Start";
             this.startButton.UseVisualStyleBackColor = true;
@@ -58,10 +61,9 @@
             // 
             // stopButton
             // 
-            this.stopButton.Location = new System.Drawing.Point(263, 262);
-            this.stopButton.Margin = new System.Windows.Forms.Padding(4);
+            this.stopButton.Location = new System.Drawing.Point(197, 213);
             this.stopButton.Name = "stopButton";
-            this.stopButton.Size = new System.Drawing.Size(238, 28);
+            this.stopButton.Size = new System.Drawing.Size(178, 23);
             this.stopButton.TabIndex = 1;
             this.stopButton.Text = "Stop";
             this.stopButton.UseVisualStyleBackColor = true;
@@ -69,129 +71,153 @@
             // 
             // minClicksBetweenMovement
             // 
-            this.minClicksBetweenMovement.Location = new System.Drawing.Point(217, 79);
-            this.minClicksBetweenMovement.Margin = new System.Windows.Forms.Padding(4);
+            this.minClicksBetweenMovement.Location = new System.Drawing.Point(163, 64);
             this.minClicksBetweenMovement.Name = "minClicksBetweenMovement";
-            this.minClicksBetweenMovement.Size = new System.Drawing.Size(132, 22);
+            this.minClicksBetweenMovement.Size = new System.Drawing.Size(100, 20);
             this.minClicksBetweenMovement.TabIndex = 2;
             // 
             // minWait
             // 
-            this.minWait.Location = new System.Drawing.Point(217, 15);
-            this.minWait.Margin = new System.Windows.Forms.Padding(4);
+            this.minWait.Location = new System.Drawing.Point(163, 12);
             this.minWait.Name = "minWait";
-            this.minWait.Size = new System.Drawing.Size(132, 22);
+            this.minWait.Size = new System.Drawing.Size(100, 20);
             this.minWait.TabIndex = 3;
             // 
             // maxWait
             // 
-            this.maxWait.Location = new System.Drawing.Point(217, 43);
-            this.maxWait.Margin = new System.Windows.Forms.Padding(4);
+            this.maxWait.Location = new System.Drawing.Point(163, 38);
             this.maxWait.Name = "maxWait";
-            this.maxWait.Size = new System.Drawing.Size(132, 22);
+            this.maxWait.Size = new System.Drawing.Size(100, 20);
             this.maxWait.TabIndex = 4;
             // 
             // asdfas
             // 
             this.asdfas.AutoSize = true;
-            this.asdfas.Location = new System.Drawing.Point(17, 15);
-            this.asdfas.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.asdfas.Location = new System.Drawing.Point(13, 15);
             this.asdfas.Name = "asdfas";
-            this.asdfas.Size = new System.Drawing.Size(87, 16);
+            this.asdfas.Size = new System.Drawing.Size(71, 13);
             this.asdfas.TabIndex = 5;
             this.asdfas.Text = "Min Wait (ms)";
             // 
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(17, 47);
-            this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label2.Location = new System.Drawing.Point(13, 41);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(91, 16);
+            this.label2.Size = new System.Drawing.Size(74, 13);
             this.label2.TabIndex = 6;
             this.label2.Text = "Max Wait (ms)";
             // 
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(17, 82);
-            this.label3.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label3.Location = new System.Drawing.Point(13, 67);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(176, 16);
+            this.label3.Size = new System.Drawing.Size(142, 13);
             this.label3.TabIndex = 7;
             this.label3.Text = "Min Clicks Before Movement";
             // 
             // maxClicksBetweenMovement
             // 
-            this.maxClicksBetweenMovement.Location = new System.Drawing.Point(217, 106);
-            this.maxClicksBetweenMovement.Margin = new System.Windows.Forms.Padding(4);
+            this.maxClicksBetweenMovement.Location = new System.Drawing.Point(163, 90);
             this.maxClicksBetweenMovement.Name = "maxClicksBetweenMovement";
-            this.maxClicksBetweenMovement.Size = new System.Drawing.Size(132, 22);
+            this.maxClicksBetweenMovement.Size = new System.Drawing.Size(100, 20);
             this.maxClicksBetweenMovement.TabIndex = 8;
             // 
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(17, 114);
-            this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label1.Location = new System.Drawing.Point(13, 93);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(180, 16);
+            this.label1.Size = new System.Drawing.Size(145, 13);
             this.label1.TabIndex = 9;
             this.label1.Text = "Max Clicks Before Movement";
             // 
             // MouseXLabel
             // 
             this.MouseXLabel.AutoSize = true;
-            this.MouseXLabel.Location = new System.Drawing.Point(17, 294);
-            this.MouseXLabel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.MouseXLabel.Location = new System.Drawing.Point(13, 239);
             this.MouseXLabel.Name = "MouseXLabel";
-            this.MouseXLabel.Size = new System.Drawing.Size(116, 16);
+            this.MouseXLabel.Size = new System.Drawing.Size(95, 13);
             this.MouseXLabel.TabIndex = 10;
             this.MouseXLabel.Text = "Mouse X Position: ";
             // 
             // MouseYLabel
             // 
             this.MouseYLabel.AutoSize = true;
-            this.MouseYLabel.Location = new System.Drawing.Point(187, 294);
-            this.MouseYLabel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.MouseYLabel.Location = new System.Drawing.Point(140, 239);
             this.MouseYLabel.Name = "MouseYLabel";
-            this.MouseYLabel.Size = new System.Drawing.Size(117, 16);
+            this.MouseYLabel.Size = new System.Drawing.Size(95, 13);
             this.MouseYLabel.TabIndex = 11;
             this.MouseYLabel.Text = "Mouse Y Position: ";
             // 
             // numMouseClicks
             // 
             this.numMouseClicks.AutoSize = true;
-            this.numMouseClicks.Location = new System.Drawing.Point(370, 294);
+            this.numMouseClicks.Location = new System.Drawing.Point(278, 239);
             this.numMouseClicks.Margin = new System.Windows.Forms.Padding(1, 0, 1, 0);
             this.numMouseClicks.Name = "numMouseClicks";
-            this.numMouseClicks.Size = new System.Drawing.Size(131, 16);
+            this.numMouseClicks.Size = new System.Drawing.Size(106, 13);
             this.numMouseClicks.TabIndex = 12;
             this.numMouseClicks.Text = "0 Total Mouse Clicks";
             // 
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(17, 144);
-            this.label4.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label4.Location = new System.Drawing.Point(13, 119);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(163, 16);
+            this.label4.Size = new System.Drawing.Size(131, 13);
             this.label4.TabIndex = 14;
             this.label4.Text = "Pause Between Burst (ms)";
             // 
             // txtPauseBetweenBurst
             // 
-            this.txtPauseBetweenBurst.Location = new System.Drawing.Point(217, 136);
-            this.txtPauseBetweenBurst.Margin = new System.Windows.Forms.Padding(4);
+            this.txtPauseBetweenBurst.Location = new System.Drawing.Point(163, 116);
             this.txtPauseBetweenBurst.Name = "txtPauseBetweenBurst";
-            this.txtPauseBetweenBurst.Size = new System.Drawing.Size(132, 22);
+            this.txtPauseBetweenBurst.Size = new System.Drawing.Size(100, 20);
             this.txtPauseBetweenBurst.TabIndex = 13;
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Location = new System.Drawing.Point(13, 145);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(102, 13);
+            this.label5.TabIndex = 16;
+            this.label5.Text = "Min Sleep Time (ms)";
+            // 
+            // txtMinSleepTime
+            // 
+            this.txtMinSleepTime.Location = new System.Drawing.Point(163, 142);
+            this.txtMinSleepTime.Name = "txtMinSleepTime";
+            this.txtMinSleepTime.Size = new System.Drawing.Size(100, 20);
+            this.txtMinSleepTime.TabIndex = 15;
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Location = new System.Drawing.Point(13, 171);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(105, 13);
+            this.label6.TabIndex = 18;
+            this.label6.Text = "Max Sleep Time (ms)";
+            // 
+            // txtMaxSleepTime
+            // 
+            this.txtMaxSleepTime.Location = new System.Drawing.Point(163, 168);
+            this.txtMaxSleepTime.Name = "txtMaxSleepTime";
+            this.txtMaxSleepTime.Size = new System.Drawing.Size(100, 20);
+            this.txtMaxSleepTime.TabIndex = 17;
             // 
             // AutoClicker
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(539, 321);
+            this.ClientSize = new System.Drawing.Size(404, 261);
+            this.Controls.Add(this.label6);
+            this.Controls.Add(this.txtMaxSleepTime);
+            this.Controls.Add(this.label5);
+            this.Controls.Add(this.txtMinSleepTime);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.txtPauseBetweenBurst);
             this.Controls.Add(this.numMouseClicks);
@@ -207,7 +233,6 @@
             this.Controls.Add(this.minClicksBetweenMovement);
             this.Controls.Add(this.stopButton);
             this.Controls.Add(this.startButton);
-            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "AutoClicker";
             this.Text = "Form1";
             this.ResumeLayout(false);
@@ -232,6 +257,10 @@
         private System.Windows.Forms.Label numMouseClicks;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.TextBox txtPauseBetweenBurst;
+        private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.TextBox txtMinSleepTime;
+        private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.TextBox txtMaxSleepTime;
     }
 }
 
